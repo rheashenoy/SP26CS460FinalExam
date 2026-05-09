@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Rhea Shenoy
+**Student ID:** 130452657
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  Just shortest path is not enough becuase we also want it to visit every chamber in set M atleast once. The decision that shortest path cannot make is in which order to visit the chambers
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  Deciding which path to take so as to visit all the chambers
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  If we do a single computation it is possible that another path uses lesser fuel. So searching over order allows you to check all the different paths and therefore choosing the cheapest one.
 
 ---
 

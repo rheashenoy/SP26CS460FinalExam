@@ -25,16 +25,11 @@ import heapq
 # =============================================================================
 
 def explain_problem():
-    """
-    Returns
-    -------
-    str
-        Your Part 1 README answers, written as a string.
-        Must match what you wrote in README Part 1.
-
-    TODO
-    """
-    return "TODO"
+    return " 1) Just shortest path is not enough becuase we also want it to visit " \
+        "every chamber in set M atleast once. The decision that shortest path cannot make is in which order to visit the chambers"\
+        "2) Deciding which path to take so as to visit all the chambers"\
+        "If we do a single computation it is possible that another path uses lesser fuel. So searching over order allows you " \
+        "to check all the different paths and therefore choosing the cheapest one."
 
 
 # =============================================================================
