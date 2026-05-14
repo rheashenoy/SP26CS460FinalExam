@@ -37,21 +37,10 @@ def explain_problem():
 # =============================================================================
 
 def select_sources(spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    spawn : node
-    relics : list[node]
-    exit_node : node
+    relics.append(spawn)
+    relics.append(exit_node)
 
-    Returns
-    -------
-    list[node]
-        No duplicates. Order does not matter.
-
-    TODO
-    """
-    pass
+    return relics
 
 
 def run_dijkstra(graph, source):
@@ -98,33 +87,35 @@ def precompute_distances(graph, spawn, relics, exit_node):
 # =============================================================================
 
 def dijkstra_invariant_check():
-    """
-    Returns
-    -------
-    str
-        Your Part 3 README answers, written as a string.
-        Must match what you wrote in README Part 3.
-
-    TODO
-    """
-    return "TODO"
-
+    return "3a)**For nodes already finalized (in S):** Since nodes are already in S the nodes shortest distance is already finalized from the source" \
+        "- **For nodes not yet finalized (not in S):**Since the node is not in S the shortest distance is not finalised but distance saved is the shortest" \
+        "path found so far but we could still find a shorter path."\
+        "3)b **Initialization : why the invariant holds before iteration 1:** Before the first iteration all the nodes have a distance of infinity as no"\
+        "distances have been found and te distance for the source from the source is zero. So no distances have been found incorrectly." \
+        "**Maintenance : why finalizing the min-dist node is always correct:** When going through the loop finalizing the min-distance node" \
+        "is correct since all edges are non-negative there will not be a shorter path to than the shortest distance." \
+        "**Termination : what the invariant guarantees when the algorithm ends:** All the nodes have the shortest distance from the source."\
+        "3)c) the correct shortest path distances are necessary so that torchbearer can choose the path with the minimum cost and therefore " \
+        "will not waste fuel or take the wrong exit."
 
 # =============================================================================
 # PART 4
 # =============================================================================
 
-def explain_search():
-    """
-    Returns
-    -------
-    str
-        Your Part 4 README answers, written as a string.
-        Must match what you wrote in README Part 4.
 
-    TODO
-    """
-    return "TODO"
+def explain_search():
+    return "**The failure mode:** Greedy picks the shortest distance in that moment whihc is the local opti mal choice. But later it could lead to a higher total cost " \
+        "- **Counter-example setup:** " \
+        "S -> A - 1 " \
+        "S -> B - 2 " \
+        "A -> B - 100 " \
+        "B -> A - 3 " \
+        "A -> T - 2 " \
+        "B -> T - 5 " \
+        "- **What greedy picks:** Greedy picks S -> A -> B -> T, whose total cost is 106 " \
+        "- **What optimal picks:** Optimal picks S -> B -> A -> T whose total cost is 7 " \
+        "- **Why greedy loses:** Becuase greedy ignores the possiblity that future costs could make the total cost larger."\
+        "The algorithm must explore all the different orders of nodes the torchbearer can take from the start node to the end node."
 
 
 # =============================================================================
