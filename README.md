@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| start node | becuase we start the path from her so we need to run Dijkstras and the DFS from this node. |
+| relic node | We need to run dijkstra's and DFS from each of the relics so that we can get theleast cost from each of the relics to all the other relics |
 
 ### Part 2b: Distance Storage
 
@@ -44,20 +44,21 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary |
+| What the keys represent | source nodes|
+| What the values represent | Values represent dictionaries that store key-value pairs with the different destivnation nodes and the shortest distance to them from the source node |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Since dictionaries represent a hashmap the time complexity to search in a hash table is always constant|
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs: k+1
+- **Cost per run: O(mlog(n))
+- **Total complexity:O((k+1)(mlog(n)))
+- **Justification (one line): There are k relics and one start node and we run dijkstra's from all of them and so there are 
+k+1 nodes we run dijkstra's from.
 
 ---
 
