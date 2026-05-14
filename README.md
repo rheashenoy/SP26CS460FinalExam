@@ -105,17 +105,23 @@ k+1 nodes we run dijkstra's from.
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy picks the shortest distance in that moment whihc is the local opti mal choice. But later it could leade to a higher total cost
+- **Counter-example setup:** 
+S -> A - 1
+S -> B - 2
+A -> B - 100
+B -> A - 3
+A -> T - 2
+B -> T - 5
+- **What greedy picks:** Greedy picks S -> A -> B -> T, whose total cost is 106
+- **What optimal picks:** Optimal picks S -> B -> A -> T whose total cost is 7
+- **Why greedy loses:** Becuase greedy ignores the possiblity that future costs could make the total cost larger.
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm must explore all the different orders of nodes the torchbearer can take from the start node to the end node.
 
 ---
 
