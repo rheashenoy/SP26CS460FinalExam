@@ -73,29 +73,28 @@ k+1 nodes we run dijkstra's from.
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  Since nodes are already in S the nodes shortest distance is already finalized from the source
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  Since the node is not in S the shortest distance is not finalised but distance saved is the shortest path found so far but we could still find a shorter path.
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  Before the first iteration all the nodes have a distance of infinity as no distances have been found and te distance for the source from the source is zero. So no distances have been found incorrectly.
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  When going through the loop finalizing the min-distance node is correct since all edges are non-negative there will not be a shorter path to than the shortest distance.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  All the nodes have the shortest distance from the source.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
-
-_Your answer here._
+ the correct shortest path distances are necessary so that torchbearer can choose the path with the minimum cost and therefore will not waste fuel or take the wrong exit.
 
 ---
 
