@@ -108,7 +108,7 @@ B -> T - 5
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | current_location |character| the node/relic we are currently at |
+| Current location | current_loc |character| the node/relic we are currently at |
 | Relics already collected | collected_relics |set| the nodes arelready visited|
 | Fuel cost so far | cost_so_far | int | the cost of fuel so far |
 
