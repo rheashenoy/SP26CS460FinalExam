@@ -106,9 +106,6 @@ B -> T - 5
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
 | Current location | current_location |character| the node/relic we are currently at |
@@ -116,8 +113,6 @@ B -> T - 5
 | Fuel cost so far | cost_so_far | int | the cost of fuel so far |
 
 ### Part 5b: Data Structure for Visited Relics
-
-> Fill in the table.
 
 | Property | Your answer |
 |---|---|
@@ -129,8 +124,6 @@ B -> T - 5
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
 - **Worst-case number of orders considered:** k!
 - **Why:** because we need to explore all the different orders of the relics and compute costs, which we need to store.
 
@@ -140,30 +133,22 @@ B -> T - 5
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** the cheapest total cost found so far
+- **When it is used:** when exploring new routes
+- **What it allows the algorithm to skip:** routes that when only partially finished have a higher cost that the best so far
 
 ### Part 6b: Lower Bound Estimation
 
-> Three bullets.
-
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** The current location, the relics already collected, the reaming relics and the cost so far is the information available at the current state.
+- **What the lower bound accounts for:** it accounts for the minimum additional fuel that is still required to visit the remaining relics
+- **Why it never overestimates:** it never overestimates becuase it is an estimate of the minimum remaining cost, therefore making sure that the potentially optimal branches aren't pruned
 
 ### Part 6c: Pruning Correctness
 
-> One to two bullets. Explain why pruning is safe.
-
-- _Your answer here._
+Since while evaluating all the possible paths we can take, and we discard those whose curent cost plus the remaining cost is more than the best so far pruning will never get rid of the optimal solution.
 
 ---
 
 ## References
 
-> Bullet list. If none beyond lecture notes, write that.
-
-- _Your references here._
+Lecture notes
