@@ -59,7 +59,27 @@ def run_dijkstra(graph, source):
 
     TODO
     """
-    pass
+    distances_from_source = {}
+
+    for node in graph:
+        distances_from_source[node] = float('inf')
+
+    distances_from_source[source] = 0
+    min_heap = [(0, source)]
+    while min_heap:
+        current_node, current_distance = heapq.heappop(min_heap)
+
+        if current_distance > distances_from_source[current_node]:
+            continue
+
+        else:
+            for neighbour, cost in graph:
+                new_distance = current_distance + cost
+                if new_distance < distances_from_source[neighbour]:
+                    distances_from_source[neighbour] = new_distance
+                    heapq.heappush(min_heap(new_distance, neighbour))
+
+    return distances_from_source
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
@@ -104,7 +124,8 @@ def dijkstra_invariant_check():
 
 
 def explain_search():
-    return "**The failure mode:** Greedy picks the shortest distance in that moment whihc is the local opti mal choice. But later it could lead to a higher total cost " \
+    return "**The failure mode:** Greedy picks the shortest distance in that moment which is the local optimal choice. But later " \
+        "it could lead to a higher total cost " \
         "- **Counter-example setup:** " \
         "S -> A - 1 " \
         "S -> B - 2 " \
