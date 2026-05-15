@@ -111,9 +111,9 @@ B -> T - 5
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | current_location |character| the node/relic we are currently at |
+| Relics already collected | collected_relics |set| the nodes arelready visited|
+| Fuel cost so far | cost_so_far | int | the cost of fuel so far |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -121,18 +121,18 @@ B -> T - 5
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | set |
+| Operation: check if relic already collected | Time complexity: O(1) |
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | Because it uses a very small amount of time to do all the operations we need done |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** k!
+- **Why:** because we need to explore all the different orders of the relics and compute costs, which we need to store.
 
 ---
 
