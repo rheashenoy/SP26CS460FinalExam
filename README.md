@@ -3,12 +3,6 @@
 **Student Name:** Rhea Shenoy
 **Student ID:** 130452657
 **Course:** CS 460 – Algorithms | Spring 2026
-
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
-
 ---
 
 ## Part 1: Problem Analysis

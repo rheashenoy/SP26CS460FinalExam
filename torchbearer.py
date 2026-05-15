@@ -67,17 +67,17 @@ def run_dijkstra(graph, source):
     distances_from_source[source] = 0
     min_heap = [(0, source)]
     while min_heap:
-        current_node, current_distance = heapq.heappop(min_heap)
+        current_distance, current_node = heapq.heappop(min_heap)
 
         if current_distance > distances_from_source[current_node]:
             continue
 
         else:
-            for neighbour, cost in graph:
+            for neighbour, cost in graph[current_node]:
                 new_distance = current_distance + cost
                 if new_distance < distances_from_source[neighbour]:
                     distances_from_source[neighbour] = new_distance
-                    heapq.heappush(min_heap(new_distance, neighbour))
+                    heapq.heappush(min_heap, (new_distance, neighbour))
 
     return distances_from_source
 
@@ -159,7 +159,7 @@ def _explore(dist_table, current_loc, relics_remaining, collected_relics, cost_s
 
         remaining_cost = dist_table[current_loc][exit_node]
 
-        if total_cost == float('inf'):
+        if remaining_cost == float('inf'):
             return
 
         total_cost = cost_so_far + remaining_cost
@@ -180,11 +180,11 @@ def _explore(dist_table, current_loc, relics_remaining, collected_relics, cost_s
         collected_relics.append(relic)
         cost_so_far += cost_to_travel
 
-        -_explore(dist_table, relic, relics_remaining,
-                  collected_relics, cost_so_far, exit_node, best)
+        _explore(dist_table, relic, relics_remaining,
+                 collected_relics, cost_so_far, exit_node, best)
 
         collected_relics.pop()
-        relics_remaining.append(relic)
+        relics_remaining.add(relic)
 
 # =============================================================================
 # PIPELINE

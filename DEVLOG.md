@@ -16,13 +16,8 @@ I think to start I'll start by implementing dijkstra's on the different relic no
 
 ---
 
-## Entry 2 – [Date]: [Short description]
-
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
-
-_Your entry here._
-
+## Entry 2 – [5/14/26]: [Bug 1 - heappush syntax error]
+My code was giving me a massive error in the run_dijkstra's function. It gave me a 'list' object is not callable error. I realised it was my heappush function that was reason for the error. i wrote it such that the compiler thought that minheap was a function itself. I reealised it was a syntax error and added a comma and it started to work.
 ---
 
 ## Entry 3 – [Date]: [Short description]
@@ -40,9 +35,7 @@ _Your entry here._
 
 ---
 
-## Final Entry – [Date]: Time Estimate
-
-> Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
+## Final Entry – [5/14/26]: Time Estimate
 
 | Part | Estimated Hours |
 |---|---|
@@ -50,8 +43,8 @@ _Your entry here._
 | Part 2: Precomputation Design | 1 hour |
 | Part 3: Algorithm Correctness | 40 minutes |
 | Part 4: Search Design | 30 minutes |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 5: State and Search Space | 40 minutes |
+| Part 6: Pruning | 1 hour |
+| Part 7: Implementation |  |
+| README and DEVLOG writing |  |
+| **Total** |  |
