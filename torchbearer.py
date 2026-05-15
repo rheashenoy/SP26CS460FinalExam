@@ -83,28 +83,17 @@ def run_dijkstra(graph, source):
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-    spawn : node
-    relics : list[node]
-    exit_node : node
+    sources = select_sources(spawn, relics, exit_node)
+    dijkstras_distances = {}
 
-    Returns
-    -------
-    dict[node, dict[node, float]]
-        Nested structure supporting dist_table[u][v] lookups
-        for every source u your design requires.
-
-    TODO
-    """
-    pass
-
+    for node in sources:
+        dijkstras_distances[node] = run_dijkstra(graph, node)
+    return dijkstras_distances
 
 # =============================================================================
 # PART 3
 # =============================================================================
+
 
 def dijkstra_invariant_check():
     return "3a)**For nodes already finalized (in S):** Since nodes are already in S the nodes shortest distance is already finalized from the source" \
