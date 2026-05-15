@@ -13,9 +13,6 @@
 
 ## Part 1: Problem Analysis
 
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
-
 - **Why a single shortest-path run from S is not enough:**
   Just shortest path is not enough becuase we also want it to visit every chamber in set M atleast once. The decision that shortest path cannot make is in which order to visit the chambers
 
@@ -31,16 +28,12 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
 | Source Node Type | Why it is a source |
 |---|---|
 | start node | becuase we start the path from her so we need to run Dijkstras and the DFS from this node. |
 | relic node | We need to run dijkstra's and DFS from each of the relics so that we can get theleast cost from each of the relics to all the other relics |
 
 ### Part 2b: Distance Storage
-
-> Fill in the table. No prose required.
 
 | Property | Your answer |
 |---|---|
@@ -52,8 +45,6 @@
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
 - **Number of Dijkstra runs: k+1
 - **Cost per run: O(mlog(n))
 - **Total complexity:O((k+1)(mlog(n)))
@@ -64,13 +55,7 @@ k+1 nodes we run dijkstra's from.
 
 ## Part 3: Algorithm Correctness
 
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
-
 ### Part 3a: What the Invariant Means
-
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
   Since nodes are already in S the nodes shortest distance is already finalized from the source
@@ -79,8 +64,6 @@ k+1 nodes we run dijkstra's from.
   Since the node is not in S the shortest distance is not finalised but distance saved is the shortest path found so far but we could still find a shorter path.
 
 ### Part 3b: Why Each Phase Holds
-
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   Before the first iteration all the nodes have a distance of infinity as no distances have been found and te distance for the source from the source is zero. So no distances have been found incorrectly.
@@ -93,7 +76,6 @@ k+1 nodes we run dijkstra's from.
 
 ### Part 3c: Why This Matters for the Route Planner
 
-> One sentence connecting correct distances to correct routing decisions.
  the correct shortest path distances are necessary so that torchbearer can choose the path with the minimum cost and therefore will not waste fuel or take the wrong exit.
 
 ---
@@ -101,9 +83,6 @@ k+1 nodes we run dijkstra's from.
 ## Part 4: Search Design
 
 ### Why Greedy Fails
-
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
 
 - **The failure mode:** Greedy picks the shortest distance in that moment whihc is the local opti mal choice. But later it could leade to a higher total cost
 - **Counter-example setup:** 
@@ -118,8 +97,6 @@ B -> T - 5
 - **Why greedy loses:** Becuase greedy ignores the possiblity that future costs could make the total cost larger.
 
 ### What the Algorithm Must Explore
-
-> One bullet. Must use the word "order."
 
 - The algorithm must explore all the different orders of nodes the torchbearer can take from the start node to the end node.
 
