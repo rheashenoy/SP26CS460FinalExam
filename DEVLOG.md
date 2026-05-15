@@ -17,7 +17,9 @@ I think to start I'll start by implementing dijkstra's on the different relic no
 ---
 
 ## Entry 2 – [5/14/26]: [Bug 1 - heappush syntax error]
+
 My code was giving me a massive error in the run_dijkstra's function. It gave me a 'list' object is not callable error. I realised it was my heappush function that was reason for the error. i wrote it such that the compiler thought that minheap was a function itself. I reealised it was a syntax error and added a comma and it started to work.
+
 ---
 
 ## Entry 3 – [Date]: [Short description]
