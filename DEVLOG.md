@@ -3,11 +3,6 @@
 **Student Name:** Rhea Shenoy
 **Student ID:** 130452657
 
-> Instructions: Write at least four dated entries. Required entry types are marked below.
-> Two to five sentences per entry is sufficient. Write entries as you go, not all in one
-> sitting. Graders check that entries reflect genuine work across multiple sessions.
-> Delete all blockquotes before submitting.
-
 ---
 
 ## Entry 1 – [5/14/26]: Initial Plan
@@ -28,7 +23,7 @@ Finally my code was running bu the output it gave me was wrong. It gave me the c
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [5/14/26]: Post-Implementation Reflection
 
 I think I would definately improve on the explore function. Instead of having it go through every possible solution, maybe i may have been able to come up with a solution that finds the order rather than a trial and error. This would therefore bring down the time complexity of our algorithm.
 
