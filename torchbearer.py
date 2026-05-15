@@ -170,7 +170,7 @@ def _explore(dist_table, current_loc, relics_remaining, collected_relics, cost_s
 
     # recursive case
 
-    for relic in relics_remaining:
+    for relic in list(relics_remaining):
         cost_to_travel = dist_table[current_loc][relic]
 
         if cost_to_travel == float('inf'):
@@ -178,10 +178,9 @@ def _explore(dist_table, current_loc, relics_remaining, collected_relics, cost_s
 
         relics_remaining.remove(relic)
         collected_relics.append(relic)
-        cost_so_far += cost_to_travel
 
         _explore(dist_table, relic, relics_remaining,
-                 collected_relics, cost_so_far, exit_node, best)
+                 collected_relics, cost_so_far + cost_to_travel, exit_node, best)
 
         collected_relics.pop()
         relics_remaining.add(relic)

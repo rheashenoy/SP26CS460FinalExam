@@ -22,9 +22,9 @@ My code was giving me a massive error in the run_dijkstra's function. It gave me
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [5/14/26]: [the output cost was wrong]
 
-_Your entry here._
+Finally my code was running bu the output it gave me was wrong. It gave me the cost as 14 when it should have been 4. I realised it was becuase I permanently changing the cost_to_far variable and so the output cost kept getting changed so instead I added the travel cost to the cost so far in the recursive call itself
 
 ---
 
